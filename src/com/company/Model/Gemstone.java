@@ -6,8 +6,6 @@ import com.company.Constants;
  * Created by Женя on 30.05.2016.
  */
 public class Gemstone extends Stone {
-    private double radius;
-    private int transparency; // 1 - transparent, 9 - opaque
 
     public Gemstone(double radius, int transparency){
         this.radius = radius;
@@ -15,7 +13,7 @@ public class Gemstone extends Stone {
     }
 
     @Override
-    public int price(){
+    public int price() {
         return (int) (Constants.DEFAULT_GEMSTONE_PRICE_COEFFICIENT * getWeight() * transparency);
     }
 }
