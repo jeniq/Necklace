@@ -6,18 +6,28 @@ import com.company.Constants;
  * Created by Женя on 30.05.2016.
  */
 public abstract class Stone implements Comparable<Stone>{
-    abstract int price();
+    protected double radius;
+    protected int transparency;
 
-    int radius;
+    abstract int price();
 
     public double getWeight(){
         return Constants.CARAT_COEFFICIENT * radius;
     }
 
+    public int getTransparency(){
+        return transparency;
+    }
+
     @Override
     public String toString(){
-        return "Jewellery, "
-                + "price: " + this.price();
+        return "Jewellery stone, "
+                + getClass()
+                + ", price "+ price() + "($)"
+                + " {radius: " + radius
+                + " carat: " + getWeight()
+                + ", transparency: " + transparency
+                + "}";
     }
 
     @Override
