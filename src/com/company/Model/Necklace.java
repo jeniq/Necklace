@@ -1,5 +1,6 @@
 package com.company.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,6 +11,7 @@ public class Necklace {
     private int price;
 
     public Necklace(Stone... stone){
+        necklaceParts = new ArrayList<>();
         for (Stone s : stone){
             necklaceParts.add(s);
         }
@@ -55,6 +57,45 @@ public class Necklace {
             }
             necklaceParts.set(i + 1, key);
         }
+    }
+
+    /**
+     * This method append new stones to necklace
+     * @param stone
+     */
+    public void appendToNecklace(Stone stone){
+        necklaceParts.add(stone);
+    }
+
+    @Override
+    public String toString(){
+        return "Necklace, price " +
+                this.getPrice() +
+                ", weight: " +
+                this.getWeight() +
+                "\nInclude stones {" +
+                necklaceParts.toString() +
+                "}";
+    }
+
+    /**
+     * This method searches stones in selected values
+     * @param min minimum value of range
+     * @param max maximum value of range
+     * @return list of stones
+     */
+    public List<Stone> getStonesFromRange(int min, int max){
+        List<Stone> stones = new ArrayList<>();
+        for (Stone s : necklaceParts){
+            if (s.getTransparency() > min && s.getTransparency() < max) {
+                stones.add(s);
+            }
+        }
+        return stones;
+    }
+
+    public List<Stone> getStones(){
+        return necklaceParts;
     }
 
 }
