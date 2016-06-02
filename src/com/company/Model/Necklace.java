@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class Necklace {
     private List<Stone> necklaceParts;
-    private int price;
 
+    // Constructor
     public Necklace(Stone... stone){
         necklaceParts = new ArrayList<>();
         for (Stone s : stone){
@@ -19,7 +19,7 @@ public class Necklace {
 
     /**
      * This method counts stone's prices in necklace
-     * @return integer value
+     * @return price
      */
     public int getPrice(){
         int sum = 0;
@@ -31,19 +31,17 @@ public class Necklace {
 
     /**
      * This method counts stone's weight in necklace
-     * @return integer value
+     * @return weight in carats
      */
     public double getWeight(){
-        int sum = 0;
+        double sum = 0;
         for (Stone s : necklaceParts){
             sum += s.getWeight();
         }
         return sum;
     }
 
-    /**
-     * Insertion sort
-     */
+    //Insertion sort
     public void sortStones(){
         Stone key;
         int i;
@@ -70,12 +68,11 @@ public class Necklace {
     @Override
     public String toString(){
         return "Necklace, price " +
-                this.getPrice() +
+                getPrice() + "$" +
                 ", weight: " +
-                this.getWeight() +
-                "\nInclude stones {" +
-                necklaceParts.toString() +
-                "}";
+                getWeight() + " carats" +
+                "\nInclude stones " +
+                "\n" + necklaceParts;
     }
 
     /**
@@ -92,10 +89,6 @@ public class Necklace {
             }
         }
         return stones;
-    }
-
-    public List<Stone> getStones(){
-        return necklaceParts;
     }
 
 }
