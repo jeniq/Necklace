@@ -10,6 +10,7 @@ public class Stone implements Comparable<Stone>{
     private double radius;
     private int transparency;
 
+    // Constructor
     public Stone(String type, double radius, int transparency){
         this.type = type;
         this.radius = radius;
@@ -24,6 +25,10 @@ public class Stone implements Comparable<Stone>{
         return Stones.valueOf(type).price(getWeight(), transparency);
     }
 
+    /**
+     * This method counts stone's weight
+     * @return weight in carats
+     */
     public double getWeight(){
         return Constants.CARAT_COEFFICIENT * radius;
     }
@@ -34,12 +39,12 @@ public class Stone implements Comparable<Stone>{
 
     @Override
     public String toString(){
-        return "Jewellery stone"
+        return "\nJewellery stone"
                 + ", price "+ price() + "$"
                 + " {radius: " + radius
                 + " carat: " + ((double)Math.round(getWeight()*100))/100
                 + ", transparency: " + transparency
-                + "}\n";
+                + "}";
     }
 
     @Override
