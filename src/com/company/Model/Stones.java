@@ -15,6 +15,12 @@ public enum Stones {
         this.coefficient = coefficient;
     }
 
+    /**
+     * This method counts stone's price
+     * @param weight carat
+     * @param transparency integer value
+     * @return price
+     */
     public int price(double weight, int transparency) {
         return (int) (coefficient * weight * transparency);
     }
