@@ -5,11 +5,24 @@ import com.company.Constants;
 /**
  * Created by Женя on 30.05.2016.
  */
-public abstract class Stone implements Comparable<Stone>{
-    protected double radius;
-    protected int transparency;
+public class Stone implements Comparable<Stone>{
+    private String type;
+    private double radius;
+    private int transparency;
 
-    abstract int price();
+    public Stone(String type, double radius, int transparency){
+        this.type = type;
+        this.radius = radius;
+        this.transparency = transparency;
+    }
+
+    /**
+     * This method counts price of stone
+     * @return integer
+     */
+    public int price(){
+        return Stones.valueOf(type).price(getWeight(), transparency);
+    }
 
     public double getWeight(){
         return Constants.CARAT_COEFFICIENT * radius;
@@ -21,13 +34,12 @@ public abstract class Stone implements Comparable<Stone>{
 
     @Override
     public String toString(){
-        return "Jewellery stone, "
-                + getClass()
-                + ", price "+ price() + "($)"
+        return "Jewellery stone"
+                + ", price "+ price() + "$"
                 + " {radius: " + radius
-                + " carat: " + getWeight()
+                + " carat: " + ((double)Math.round(getWeight()*100))/100
                 + ", transparency: " + transparency
-                + "}";
+                + "}\n";
     }
 
     @Override
