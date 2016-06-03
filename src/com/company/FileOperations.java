@@ -3,7 +3,10 @@ package com.company;
 import java.io.*;
 
 /**
- * Created by Женя on 01.06.2016.
+ * This class realise work with file
+ *
+ * @version 02 June 2016
+ * @author Yevhen Hryshchenko
  */
 public class FileOperations {
     public static String readFile(String path) throws IOException {

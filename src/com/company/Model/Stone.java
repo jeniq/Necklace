@@ -3,8 +3,16 @@ package com.company.Model;
 import com.company.Constants;
 
 /**
- * Created by Женя on 30.05.2016.
+ * This class realises jewellery stone.
+ * It consists of type, radius and transparency.
+ * It possible to get price of stone.
+ * Price is depending of type that stores in Enum Stones.
+ * In this class is overrides method compareTo by price.
+ *
+ * @version 01 June 2016
+ * @author Yevhen Hryshchenko
  */
+
 public class Stone implements Comparable<Stone>{
     private String type;
     private double radius;

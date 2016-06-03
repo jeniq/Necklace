@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Женя on 30.05.2016.
+ * This class realises necklace.
+ * Necklace consists of stones and stores price, weight fields.
+ * Necklace's stones can be sorted by price.
+ * There is possibility to find stones in necklace using some range.
+ *
+ * @version 01 June 2016
+ * @author Yevhen Hryshchenko
  */
 public class Necklace {
     private List<Stone> necklaceParts;

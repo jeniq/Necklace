@@ -3,8 +3,13 @@ package com.company.Model;
 import com.company.Constants;
 
 /**
- * Created by Женя on 02.06.2016.
+ * This class contains coefficient for stone by type.
+ * This class contains method that count price.
+ *
+ * @version 02 June 2016
+ * @author Yevhen Hryshchenko
  */
+
 public enum Stones {
     GEMSTONE(Constants.DEFAULT_GEMSTONE_PRICE_COEFFICIENT),
     SEMIPRECIOUS(Constants.DEFAULT_SEMIPRECIOUS_PRICE_COEFFICIENT);
